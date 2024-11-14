@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background: url('images/background.jpg') no-repeat center center/cover;
+  color: #fff;
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 20px; /* Adjusted to avoid overlap with sidebar */
+  left: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: #1e1e1e;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-top: 70px; /* Adjusted to move the menu items down */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-hidden {
+  transform: translateX(-250px);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-left: 15px;
+}
+
+.menu-item {
+  color: #c9c9c9;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+  color: #fff;
+  background-color: #444; /* Added background on hover */
+  padding-left: 10px; /* Subtle slide effect */
+}
+
+/* Highlight the Home button */
+.menu-item.active {
+  color: #fff;
+  background-color: #333;
+  padding-left: 10px;
+}
+
+.submenu {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 20px;
+}
+
+.submenu-item {
+  font-size: 16px;
+  color: #a9a9a9;
+  transition: all 0.3s ease;
+}
+
+.submenu-item:hover {
+  color: #fff;
+  background-color: #444; /* Added background on hover */
+  padding-left: 10px;
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 36px;
+}
