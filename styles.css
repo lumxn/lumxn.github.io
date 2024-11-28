@@ -146,22 +146,30 @@ h1.moved {
   background: transparent;
 }
 
-.proxy-btn {
+/* Buttons at bottom-right */
+.proxy-btn, .vpn-btn {
   position: fixed;
   bottom: 20px;
-  right: 20px;
-  background-color: #1e1e1e;
+  background: none;
+  border: none;
   color: #fff;
   font-size: 24px;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 10px;
   cursor: pointer;
   z-index: 1000;
-  transition: all 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #333;
 }
 
-.proxy-btn:hover {
+.proxy-btn {
+  right: 120px; /* Adjust position to ensure space between the buttons */
+}
+
+.vpn-btn {
+  right: 20px; /* Position the VPN button on the bottom right */
+}
+
+.proxy-btn:hover, .vpn-btn:hover {
   background-color: #444;
   box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* White glow on hover */
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* White text shadow */
