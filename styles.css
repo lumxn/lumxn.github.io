@@ -145,3 +145,24 @@ h1.moved {
 .sidebar::-webkit-scrollbar-thumb {
   background: transparent;
 }
+
+.proxy-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 24px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.proxy-btn:hover {
+  background-color: #444;
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* White glow on hover */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* White text shadow */
+}
