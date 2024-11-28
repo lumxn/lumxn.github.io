@@ -1,3 +1,4 @@
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -5,143 +6,93 @@
   font-family: Arial, sans-serif;
 }
 
+/* Background for the proxy page */
 body {
   display: flex;
   height: 100vh;
-  background: url('images/background.jpg') no-repeat center center/cover;
-  color: #fff;
-}
-
-.toggle-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 30px;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.sidebar {
-  width: 250px;
-  height: 100%;
-  background-color: #1e1e1e;
-  position: fixed;
-  left: -250px;
-  top: 0;
-  padding-top: 70px;
-  padding-left: 20px;
-  padding-right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow-y: auto;
-}
-
-.sidebar-visible {
-  transform: translateX(250px);
-}
-
-.menu {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 100%;
-  padding-bottom: 10px;
-}
-
-.menu-item {
-  color: #c9c9c9;
-  text-decoration: none;
-  font-size: 18px;
-  display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s ease;
-  position: relative;
-  padding: 12px 0;
-  width: calc(100% - 40px);
-  border-radius: 10px;
-  text-align: center;
-  margin-left: 20px;
-  margin-right: 20px;
-  background: linear-gradient(45deg, #222, #444);
+  background: url('proxybackground.jpg') no-repeat center center/cover; /* Added background image */
+  color: #333;
+  flex-direction: column;
+  background-size: cover; /* Ensure the background covers the entire page */
 }
 
-.mute-btn {
+/* Content Container with Darker Background */
+.content {
+  text-align: center;
+  background-color: rgba(50, 50, 50, 0.9); /* Darker background with more opacity */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Soft shadow around the content */
+  width: 80%;
+  max-width: 900px;
+}
+
+/* Title Styling */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff; /* White text color for better contrast */
+}
+
+/* Button for bottom right corner */
+.bottom-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 1000;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.menu-item:hover {
+.bottom-button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.bottom-button:active {
+  background-color: #004085;
+}
+
+/* Proxy List Styling */
+.proxy-list {
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 10px; /* Space between items */
+}
+
+.proxy-item {
+  color: #fff; /* Default text color to make it visible */
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-block;
+  background: linear-gradient(45deg, #222, #444);
+  padding: 8px 16px; /* Smaller size */
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.proxy-item:hover {
   color: #fff;
   background-color: #444;
   box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* White glow on hover */
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* White text shadow */
-  padding-left: 20px;
 }
 
-.menu-item.active {
+.proxy-item:active {
   color: #fff;
   background-color: #333;
-  padding-left: 20px;
   box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8); /* White glow on active */
   text-shadow: 0 0 12px rgba(255, 255, 255, 0.8); /* White text shadow */
-}
-
-.submenu {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  padding-left: 20px;
-}
-
-.submenu-item {
-  font-size: 16px;
-  color: #a9a9a9;
-  transition: all 0.3s ease;
-}
-
-.submenu-item:hover {
-  color: #fff;
-  background-color: #444;
-  padding-left: 10px;
-}
-
-.content {
-  padding: 20px;
-  text-align: center;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-h1 {
-  font-size: 36px;
-  transition: transform 0.3s ease; /* Add transition for smooth movement */
-}
-
-h1.moved {
-  transform: translateX(250px); /* Move the title when the sidebar is visible */
-}
-
-/* Make scrollbar invisible but still scrollable */
-.sidebar::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-}
-
-.sidebar::-webkit-scrollbar-thumb {
-  background: transparent;
 }
