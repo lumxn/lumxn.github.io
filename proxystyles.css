@@ -1,0 +1,74 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Background for the proxy page */
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: url('proxybackground.jpg') no-repeat center center/cover; /* Added background image */
+  color: #333;
+  flex-direction: column;
+  background-size: cover; /* Ensure the background covers the entire page */
+}
+
+/* Content Container with Darker Background */
+.content {
+  text-align: center;
+  background-color: rgba(50, 50, 50, 0.9); /* Darker background with more opacity */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Soft shadow around the content */
+  width: 80%;
+  max-width: 900px;
+}
+
+/* Title Styling */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff; /* White text color for better contrast */
+}
+
+/* Proxy List Styling */
+.proxy-list {
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 10px; /* Space between items */
+}
+
+.proxy-item {
+  color: #fff; /* Default text color to make it visible */
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-block;
+  background: linear-gradient(45deg, #222, #444);
+  padding: 8px 16px; /* Smaller size */
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.proxy-item:hover {
+  color: #fff;
+  background-color: #444;
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* White glow on hover */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* White text shadow */
+}
+
+.proxy-item:active {
+  color: #fff;
+  background-color: #333;
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8); /* White glow on active */
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8); /* White text shadow */
+}
