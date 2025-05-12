@@ -1,0 +1,36 @@
+<html>
+<head>
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background-color: black;
+    }
+    #container {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+  <script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.RufflePlayer.config = {
+      autoplay: "on",
+      splashScreen: false,
+      unmuteOverlay: "hidden",
+      quality: "medium"
+    };
+    window.addEventListener("load", () => {
+      const ruffle = window.RufflePlayer.newest();
+      const player = ruffle.createPlayer();
+      document.getElementById("container").appendChild(player);
+      player.load("HappyWheels.swf"); 
+      player.style.width = "100%";
+      player.style.height = "100%";
+    });
+  </script>
+</body>
+</html>
